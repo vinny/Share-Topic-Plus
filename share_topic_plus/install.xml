@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.5.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[Share Topic Plus]]></title>
+		<description lang="en"><![CDATA[Adds buttons to share topics on Facebook, Twitter and Google+]]></description>
+		<author-group>
+			<author>
+				<realname><![CDATA[Marcus Vinicius]]></realname>
+				<username><![CDATA[_Vinny_]]></username>
+				<homepage><![CDATA[http://www.suportephpbb.com.br]]></homepage>
+				<email><![CDATA[vinny@suportephpbb.com.br]]></email>
+			</author>
+		</author-group>
+		<mod-version>1.0.0</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>300</time>
+			<target-version>3.0.9</target-version>
+		</installation>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/*.*" to="/*.*"/>
+		</copy>
+		<open src="viewtopic.php">
+			<edit>
+				<find><![CDATA[// Does this topic contain a poll?]]></find>
+				<action type="before-add"><![CDATA[$topic_url = generate_board_url() . "/viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id";
+{
+  $template->assign_block_vars(array(
+    'U_SHARE_TOPIC_URL'			=> $topic_url,
+  ));
+}
+
+]]></action>
+			</edit>
+		</open>
+		<open src="includes/functions.php">
+			<edit>
+				<find><![CDATA['S_USER_NEW'					=> $user->data['user_new'],]]></find>
+				<action type="after-add"><![CDATA[		//mod: Share Topic Plus
+		'S_SHARE_PLUS_ENABLE'		=> (!empty($config['enable_share_plus'])) ? true : false,
+		'S_SHARE_PLUS_FACEBOOK'		=> (!empty($config['enable_share_plus_facebook'])) ? true : false,
+		'S_SHARE_PLUS_TWITTER'		=> (!empty($config['enable_share_plus_twitter'])) ? true : false,
+		'S_SHARE_PLUS_GOOGLE'		=> (!empty($config['enable_share_plus_google'])) ? true : false,
+		
+		'SHARE_PLUS_TWITTER_VIA'	=> !empty($config['twitter_via']) ? $config['twitter_via'] : false,
+		'SHARE_PLUS_TWITTER_BUTTON'	=> !empty($config['twitter_button']) ? $config['twitter_button'] : false,
+		'SHARE_PLUS_TWITTER_LANG'	=> !empty($config['twitter_lang']) ? $config['twitter_lang'] : false,
+		
+		'SHARE_PLUS_GOOGLE_SIZE'	=> !empty($config['google_size']) ? $config['google_size'] : false,
+		'SHARE_PLUS_GOOGLE_COUNT'	=> !empty($config['google_count']) ? $config['google_count'] : false,
+		'SHARE_PLUS_GOOGLE_LANG'	=> !empty($config['google_lang']) ? $config['google_lang'] : false,
+		
+		'SHARE_PLUS_FACEBOOK_LAYOUT'=> !empty($config['facebook_layout']) ? $config['facebook_layout'] : false,
+		'SHARE_PLUS_FACEBOOK_SEND'	=> !empty($config['facebook_send']) ? $config['facebook_send'] : false,
+		'SHARE_PLUS_FACEBOOK_FACE'	=> !empty($config['facebook_face']) ? $config['facebook_face'] : false,
+		'SHARE_PLUS_FACEBOOK_ACTION'=> !empty($config['facebook_action']) ? $config['facebook_action'] : false,
+		'SHARE_PLUS_FACEBOOK_FONT'	=> !empty($config['facebook_font']) ? $config['facebook_font'] : false,
+		'SHARE_PLUS_FACEBOOK_COLOR'	=> !empty($config['facebook_color']) ? $config['facebook_color'] : false,
+		'SHARE_PLUS_FACEBOOK_LANG'	=> !empty($config['facebook_lang']) ? $config['facebook_lang'] : false,
+		'SHARE_PLUS_FACEBOOK_WIDTH'	=> !empty($config['facebook_width']) ? $config['facebook_width'] : false,
+		//mod: Share Topic Plus]]></action>
+			</edit>
+		</open>
+		<open src="language/en/acp/common.php">
+			<edit>
+				<find><![CDATA[?>]]></find>
+				<action type="before-add"><![CDATA[// Share Topic Plus mod
+$lang = array_merge($lang, array(
+	'ACP_SHARE_TOPIC'	=> 'Share Topic Plus',
+	'ACP_SHARE_SETTINGS'	=> 'Settings',
+));]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/overall_header.html">
+			<edit>
+				<find><![CDATA[</head>]]></find>
+				<action type="before-add"><![CDATA[<!-- INCLUDE sharetopic_header.html -->]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/viewtopic_body.html">
+			<edit>
+				<find><![CDATA[<!-- IF U_MCP --><p>[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->]]></find>
+				<action type="before-add"><![CDATA[<!-- INCLUDE sharetopic_body.html -->]]></action>
+			</edit>
+		</open>
+		<php-installer><![CDATA[install_share_topic.php]]></php-installer>
+		<diy-instructions lang="en"><![CDATA[!IMPORTANT! To work correctly, follow the procedures:
+1. Upload the files from root to your phpBB3 directory.
+2. Browse to the file install_share_topic.php in the root of your forum to make the database changes.
+3. Make all edits to all files.
+4. Refresh the styles in the ACP
+5. Set the settings for the "Share Topic Plus" under the ".MODS" tab.  
+6. Enjoy the Mod!!
+]]></diy-instructions>
+	</action-group>
+</mod>

@@ -1,0 +1,8 @@
+Share Topic Plus
+PHP Version: 5.3.0
+DBMS: MySQL 5.1.37-community-log
+phpBB3 Version: 3.0.9
+
+Adding acp module: acp/info/acp_share_topic_plus.php
+Fail
+
