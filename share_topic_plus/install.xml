@@ -22,6 +22,9 @@
 			<time>300</time>
 			<target-version>3.0.9</target-version>
 		</installation>
+		<link-group>
+			<link type="template" href="contrib/subsilver2.xml" lang="en">Subsilver2 template</link>
+		</link-group>
 	</header>
 	<action-group>
 		<copy>
@@ -66,16 +69,6 @@
 		'SHARE_PLUS_FACEBOOK_LANG'	=> !empty($config['facebook_lang']) ? $config['facebook_lang'] : false,
 		'SHARE_PLUS_FACEBOOK_WIDTH'	=> !empty($config['facebook_width']) ? $config['facebook_width'] : false,
 		//mod: Share Topic Plus]]></action>
-			</edit>
-		</open>
-		<open src="language/en/acp/common.php">
-			<edit>
-				<find><![CDATA[?>]]></find>
-				<action type="before-add"><![CDATA[// Share Topic Plus mod
-$lang = array_merge($lang, array(
-	'ACP_SHARE_TOPIC'	=> 'Share Topic Plus',
-	'ACP_SHARE_SETTINGS'	=> 'Settings',
-));]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/template/overall_header.html">

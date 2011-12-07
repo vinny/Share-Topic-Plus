@@ -29,9 +29,8 @@ class acp_share_topic_plus
 	{
 		global $db, $user, $auth, $template, $cache;
 		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
-		$get_locale =	simplexml_load_file($phpbb_root_path . '/FacebookLocales.xml');
 
-		$user->add_lang('mods/acp_share');
+		$user->add_lang('mods/info_acp_share_topic_plus');
 
 		$action	= request_var('action', '');
 		$submit = (isset($_POST['submit'])) ? true : false;
