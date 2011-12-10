@@ -30,7 +30,7 @@ if (!file_exists($phpbb_root_path . 'umil/umil_auto.' . $phpEx))
 /*
 * The language file which will be included when installing
 */
-$language_file = 'mods/acp_share';
+$language_file = 'mods/info_acp_share_topic_plus';
 
 // The name of the mod to be displayed during installation.
 $mod_name = 'ACP_SHARE_TOPIC';
