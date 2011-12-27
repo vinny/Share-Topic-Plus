@@ -37,6 +37,8 @@ class acp_share_topic_plus
 
 		$form_key = 'acp_share';
 		add_form_key($form_key);
+		// Version Check
+		$config['SHARETOPIC_VERSION'] = (isset($config['SHARETOPIC_VERSION'])) ? $config['SHARETOPIC_VERSION'] : '1.0.0-RC1';
 		
 		switch ($mode)
 		{
@@ -139,7 +141,10 @@ class acp_share_topic_plus
 			'S_ERROR'			=> (sizeof($error)) ? true : false,
 			'ERROR_MSG'			=> implode('<br />', $error),
 
-			'U_ACTION'			=> $this->u_action)
+			'U_ACTION'			=> $this->u_action,
+			'SHARETOPIC_VERSION'	=> $config['SHARETOPIC_VERSION'],
+			'S_VERSION_UP_TO_DATE'	=> $this->sharetopic_version_compare($config['SHARETOPIC_VERSION'])
+			)
 		);
 
 		// Output relevant page
@@ -293,6 +298,50 @@ class acp_share_topic_plus
 		return '<option value="none"' . (($value == 'none') ? ' selected="selected"' : '') . '>' . $user->lang['GOOGLE_NONE'] . '</option><option value="bubble"' . (($value == 'bubble') ? ' selected="selected"' : '') . '>' . $user->lang['GOOGLE_BUBBLE'] . '</option><option value="inline"' . (($value == 'inline') ? ' selected="selected"' : '') . '>' . $user->lang['GOOGLE_INLINE'] . '</option>';
 	}
 
+	/**
+	* Obtains the latest version information
+	* @param string    $current_version    version information
+	* @param int       $ttl             Cache version information for $ttl seconds. Defaults to 86400 (24 hours).
+	* 
+	* @return bool       false on failure.
+	**/
+	function sharetopic_version_compare($current_version = '', $version_up_to_date = true, $ttl = 86400)
+	{
+		global $cache, $template;
+
+		$info = $cache->get('sharetopic_versioncheck');
+
+		if ($info === false)
+		{
+		$errstr = '';
+		$errno = 0;
+
+		$info = get_remote_file('www.suportephpbb.com.br', '/vinny', 'sharetopic.txt', $errstr, $errno);
+		if ($info === false)
+		{
+			$template->assign_var('S_VERSIONCHECK_FAIL', true);
+			$cache->destroy('sharetopic_versioncheck');
+		}
+		}
+
+		if ($info !== false)
+	{
+		$cache->put('sharetopic_versioncheck', $info, $ttl);
+		$latest_version_info = explode("\n", $info);
+
+		$latest_version = strtolower(trim($latest_version_info[0]));
+		$current_version = strtolower(trim($current_version));
+		$version_up_to_date = version_compare($current_version, $latest_version, '<') ? false : true;
+
+		$template->assign_vars(array(
+			'U_VERSIONCHECK'	=> ($version_up_to_date) ? false : $latest_version_info[1],
+			'S_VERSIONCURRENT'	=> $current_version,
+			'S_VERSIONNEW'		=> ($version_up_to_date) ? false : $latest_version_info[0],
+		));
+	}
+
+		return $version_up_to_date;
+	}
 }
 
 ?>

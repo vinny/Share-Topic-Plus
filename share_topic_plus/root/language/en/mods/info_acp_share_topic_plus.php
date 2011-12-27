@@ -37,10 +37,14 @@ $lang = array_merge($lang, array(
 	// acp module - titles 
 	'ACP_SHARE_TOPIC' 			=> 'Share Topic Plus',
 	'ACP_SHARE_SETTINGS'		=> 'Settings',
-	'ACP_SHARE_TOPIC_EXPLAIN'	=> 'Here you can manage the buttons to share topics on Facebook, Twitter and Google+ on your board.',
+	'ACP_SHARE_TOPIC_EXPLAIN'	=> 'Here you can manage the buttons to share topics on Facebook, Twitter and Google Plus on your board.',
 	
 	// acp config
 	'ACP_SHARE_ENABLE'			=> 'Enable',
+	
+	// acp version check
+	'ACP_VERSION_CURRENT'		=> 'Current version',
+	'ACP_VERSION_NEW'			=> 'Latest version',
 
 	// FACEBOOK
 	'ACP_SHARE_SETTINGS_FACEBOOK'	=> 'Facebook Settings',
@@ -106,22 +110,21 @@ $lang = array_merge($lang, array(
 	'TWITTER_SPANISH'		=> 'Spanish',
 	'TWITTER_TURKISH'		=> 'Turkish',
 	
-	// GOOGLE+
-	'ACP_SHARE_SETTINGS_GOOGLE'		=> 'Google+ Settings',
-	'ACP_SHARE_GOOGLE'				=> 'Enable Google+',
-	'ACP_SHARE_ENABLE_GOOGLE_EXPLAIN'	=> '',
+	// GOOGLE PLUS
+	'ACP_SHARE_SETTINGS_GOOGLE'		=> 'Google Plus Settings',
+	'ACP_SHARE_GOOGLE'				=> 'Enable Google Plus',
 	'ACP_SHARE_GOOGLE_SIZE'			=> 'Button Size',
 	'ACP_SHARE_GOOGLE_SIZE_EXPLAIN'	=> 'Choose the size of the button from the following options: <em><strong>small</strong></em>, <em><strong>medium</strong></em>, <em><strong>standard</strong></em> or <em><strong>tall</strong></em>. To see examples of buttons and dimensions, <a href="https://developers.google.com/+/plugins/+1button/#button-sizes">click here</a>.',
 	'ACP_SHARE_GOOGLE_LANG'			=> 'Button Language',
 	'ACP_SHARE_GOOGLE_LANG_EXPLAIN'	=> 'Enter only the code for the language, according to the <a href="https://developers.google.com/+/plugins/+1button/#available-languages">list of languages available</a>.',
 	'ACP_SHARE_GOOGLE_LAYOUT'			=> 'Button Layout',
 	'ACP_SHARE_GOOGLE_LAYOUT_EXPLAIN'	=> 'Choose the layout of the button from the following options: <em><strong>none</strong></em>, <em><strong>bubble</strong></em> or <em><strong>inline</strong></em>.',
-	// google+ size
+	// google plus size
 	'GOOGLE_SMALL'		=> 'Small',
 	'GOOGLE_MEDIUM'		=> 'Medium',
 	'GOOGLE_STANDARD'	=> 'Standard',
 	'GOOGLE_TALL'		=> 'Tall',
-	// google+ layout
+	// google plus layout
 	'GOOGLE_NONE'		=> 'None',
 	'GOOGLE_BUBBLE'		=> 'Bubble',
 	'GOOGLE_INLINE'		=> 'Inline',
