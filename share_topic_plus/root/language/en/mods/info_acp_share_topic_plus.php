@@ -40,8 +40,8 @@ $lang = array_merge($lang, array(
 	'ACP_SHARE_TOPIC_EXPLAIN'	=> 'Here you can manage the buttons to share topics on Facebook, Twitter and Google Plus on your board.',
 	
 	// acp config
-	'ACP_SHARE_ENABLE'			=> 'Enable',
-	
+	'ACP_SHARE_ENABLE'				=> 'Enable',
+
 	// acp version check
 	'ACP_VERSION_CURRENT'		=> 'Current version',
 	'ACP_VERSION_NEW'			=> 'Latest version',

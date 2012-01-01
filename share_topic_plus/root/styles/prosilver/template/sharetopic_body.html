@@ -4,7 +4,7 @@
 <script type="text/javascript">
 //<![CDATA[
 (function() {
-	document.write('<fb:like data-href="{U_SHARE_TOPIC_URL}" class="fb-like" data-send="{SHARE_PLUS_FACEBOOK_SEND}" data-layout="{SHARE_PLUS_FACEBOOK_LAYOUT}" data-width="{SHARE_PLUS_FACEBOOK_WIDTH}" data-show-faces="{SHARE_PLUS_FACEBOOK_FACE}" data-action="{SHARE_PLUS_FACEBOOK_ACTION}" data-colorscheme="{SHARE_PLUS_FACEBOOK_COLOR}" data-font="{SHARE_PLUS_FACEBOOK_FONT}"><\/fb:like>');
+	document.write('<fb:like data-href="{U_SHARE_TOPIC}" class="fb-like" data-send="{SHARE_PLUS_FACEBOOK_SEND}" data-layout="{SHARE_PLUS_FACEBOOK_LAYOUT}" data-width="{SHARE_PLUS_FACEBOOK_WIDTH}" data-show-faces="{SHARE_PLUS_FACEBOOK_FACE}" data-action="{SHARE_PLUS_FACEBOOK_ACTION}" data-colorscheme="{SHARE_PLUS_FACEBOOK_COLOR}" data-font="{SHARE_PLUS_FACEBOOK_FONT}"><\/fb:like>');
 	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
 	s.type = 'text/javascript';
 	s.async = true;
@@ -19,7 +19,7 @@
 <script type="text/javascript">
 //<![CDATA[
 (function() {
-	document.write('<a href="http://twitter.com/share" class="twitter-share-button" data-text="{TOPIC_TITLE}" data-count="{SHARE_PLUS_TWITTER_BUTTON}" data-via="{SHARE_PLUS_TWITTER_VIA}" data-lang="{SHARE_PLUS_TWITTER_LANG}">Tweet<\/a>');
+	document.write('<a href="http://twitter.com/share" class="twitter-share-button" data-url="{U_SHARE_TOPIC}" data-text="{TOPIC_TITLE}" data-count="{SHARE_PLUS_TWITTER_BUTTON}" data-via="{SHARE_PLUS_TWITTER_VIA}" data-lang="{SHARE_PLUS_TWITTER_LANG}">Tweet<\/a>');
 	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
 	s.type = 'text/javascript';
 	s.async = true;
@@ -39,7 +39,7 @@
 <div id="plusone-div"></div>
 <script type="text/javascript">
 //<![CDATA[
-gapi.plusone.render ('plusone-div', {"size": "{SHARE_PLUS_GOOGLE_SIZE}", "annotation": "{SHARE_PLUS_GOOGLE_COUNT}"});
+gapi.plusone.render ('plusone-div', {"href": "{U_SHARE_TOPIC}", "size": "{SHARE_PLUS_GOOGLE_SIZE}", "annotation": "{SHARE_PLUS_GOOGLE_COUNT}"});
 //]]>
 </script>
 <!-- ENDIF -->

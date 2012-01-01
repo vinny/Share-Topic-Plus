@@ -8,9 +8,7 @@
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
 		<title lang="en"><![CDATA[Share Topic Plus]]></title>
 		<description lang="en"><![CDATA[Adds buttons to share topics on Facebook, Twitter and Google Plus]]></description>
-		<author-notes lang="en"><![CDATA[With this modification, buttons to share on social networks is added to the topics of your forum. To subsilver2, look at: contrib/subsilver2.xml
-
-If you want to contribute to the development of this MOD, consider making a donation visiting: http://goo.gl/erGPa]]></author-notes>
+		<author-notes lang="en"><![CDATA[If you want to contribute to the development of this MOD, consider making a donation visiting: http://goo.gl/erGPa]]></author-notes>
 		<author-group>
 			<author>
 				<realname><![CDATA[Marcus Vinicius]]></realname>
@@ -36,6 +34,7 @@ If you want to contribute to the development of this MOD, consider making a dona
 			<file from="root/includes/acp/info/acp_share_topic_plus.php" to="includes/acp/info/acp_share_topic_plus.php"/>
 			<file from="root/language/en/mods/info_acp_share_topic_plus.php" to="language/en/mods/info_acp_share_topic_plus.php"/>
 			<file from="root/styles/prosilver/template/sharetopic_body.html" to="styles/prosilver/template/sharetopic_body.html"/>
+			<file from="root/styles/prosilver/template/sharetopic_site.html" to="styles/prosilver/template/sharetopic_site.html"/>
 			<file from="root/umil/*.*" to="umil/*.*"/>
 			<file from="root/FacebookLocales.xml" to="FacebookLocales.xml"/>
 			<file from="root/install_share_topic.php" to="install_share_topic.php"/>

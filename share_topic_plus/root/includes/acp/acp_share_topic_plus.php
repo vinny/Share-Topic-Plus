@@ -71,9 +71,6 @@ class acp_share_topic_plus
 						'google_size'			=> array('lang' => 'ACP_SHARE_GOOGLE_SIZE',        'validate' => 'string', 'type' => 'select', 'method' => 'google_size', 'explain' => true),
 						'google_lang'			=> array('lang' => 'ACP_SHARE_GOOGLE_LANG',        'validate' => 'string', 'type' => 'text:10:6', 'explain' => true),
 						'google_count'			=> array('lang' => 'ACP_SHARE_GOOGLE_LAYOUT',        'validate' => 'string', 'type' => 'select', 'method' => 'google_count', 'explain' => true),
-						
-						
-						//'colorized_links'		=> array('lang' => 'ACP_COLORIZED_LINKS_COLOR',        'validate' => 'string', 'type' => 'text:7:7', 'explain' => true),
 
 						'legend5'					=> 'ACP_SUBMIT_CHANGES',
 					)
