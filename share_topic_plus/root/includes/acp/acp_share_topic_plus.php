@@ -38,7 +38,7 @@ class acp_share_topic_plus
 		$form_key = 'acp_share';
 		add_form_key($form_key);
 		// Version Check
-		$config['SHARETOPIC_VERSION'] = (isset($config['SHARETOPIC_VERSION'])) ? $config['SHARETOPIC_VERSION'] : '1.0.0-RC1';
+		$config['SHARETOPIC_VERSION'] = (isset($config['SHARETOPIC_VERSION'])) ? $config['SHARETOPIC_VERSION'] : '1.0.0';
 		
 		switch ($mode)
 		{
@@ -138,9 +138,9 @@ class acp_share_topic_plus
 			'S_ERROR'			=> (sizeof($error)) ? true : false,
 			'ERROR_MSG'			=> implode('<br />', $error),
 
-			'U_ACTION'			=> $this->u_action,
 			'SHARETOPIC_VERSION'	=> $config['SHARETOPIC_VERSION'],
-			'S_VERSION_UP_TO_DATE'	=> $this->sharetopic_version_compare($config['SHARETOPIC_VERSION'])
+			'S_VERSION_UP_TO_DATE'	=> $this->sharetopic_version_compare($config['SHARETOPIC_VERSION']),
+			'U_ACTION'			=> $this->u_action
 			)
 		);
 
@@ -274,7 +274,29 @@ class acp_share_topic_plus
 	{
 		global $user;
 
-		return '<option value="nl"' . (($value == 'nl') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_DUTCH'] . '</option><option value="en"' . (($value == 'en') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_ENGLISH'] . '</option><option value="fr"' . (($value == 'fr') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_FRENCH'] . '</option><option value="de"' . (($value == 'de') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_GERMAN'] . '</option><option value="id"' . (($value == 'id') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_INDONESIAN'] . '</option><option value="it"' . (($value == 'it') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_ITALIAN'] . '</option><option value="ja"' . (($value == 'ja') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_JAPANESE'] . '</option><option value="ko"' . (($value == 'ko') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_KOREAN'] . '</option><option value="pt"' . (($value == 'pt') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_PORTUGUESE'] . '</option><option value="ru"' . (($value == 'ru') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_RUSSIAN'] . '</option><option value="es"' . (($value == 'es') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_SPANISH'] . '</option><option value="tr"' . (($value == 'tr') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_TURKISH'] . '</option>';
+		return '<option value=""' . (($value == '') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_SELECT'] . '</option>
+<option value="hi"' . (($value == 'hi') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_HINDI'] . '</option>
+<option value="zh-cn"' . (($value == 'zh-cn') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_SIMP_CHINESE'] . '</option>
+<option value="pt"' . (($value == 'pt') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_PORTUGUESE'] . '</option>
+<option value="id"' . (($value == 'id') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_INDONESIAN'] . '</option>
+<option value="it"' . (($value == 'it') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_ITALIAN'] . '</option>
+<option value="es"' . (($value == 'es') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_SPANISH'] . '</option>
+<option value="da"' . (($value == 'da') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_DANISH'] . '</option>
+<option value="tr"' . (($value == 'tr') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_TURKISH'] . '</option>
+<option value="en"' . (($value == 'en') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_ENGLISH'] . '</option>
+<option value="fil"' . (($value == 'fil') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_FILIPINO'] . '</option>
+<option value="ko"' . (($value == 'ko') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_KOREAN'] . '</option>
+<option value="fr"' . (($value == 'fr') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_FRENCH'] . '</option>
+<option value="sv"' . (($value == 'sv') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_SWEDISH'] . '</option>
+<option value="no"' . (($value == 'no') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_NORWEGIAN'] . '</option>
+<option value="zh-tw"' . (($value == 'zh-tw') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_TRAD_CHINESE'] . '</option>
+<option value="nl"' . (($value == 'nl') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_DUTCH'] . '</option>
+<option value="ru"' . (($value == 'ru') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_RUSSIAN'] . '</option>
+<option value="de"' . (($value == 'de') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_GERMAN'] . '</option>
+<option value="ja"' . (($value == 'ja') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_JAPANESE'] . '</option>
+<option value="fi"' . (($value == 'fi') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_FINNISH'] . '</option>
+<option value="msa"' . (($value == 'msa') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_MALAY'] . '</option>
+<option value="pl"' . (($value == 'pl') ? ' selected="selected"' : '') . '>' . $user->lang['TWITTER_POLISH'] . '</option>';
 	}
 	
 	/**

@@ -97,19 +97,30 @@ $lang = array_merge($lang, array(
 	'TWITTER_VERTICAL'		=> 'Vertical',
 	'TWITTER_HORIZONTAL'	=> 'Horizontal ',
 	// twitter language
-	'TWITTER_DUTCH'			=> 'Dutch',
+	'TWITTER_SELECT'		=> 'Select Language',
+	'TWITTER_HINDI'			=> 'Hindi',
+	'TWITTER_SIMP_CHINESE'	=> 'Simplified Chinese',
+	'TWITTER_PORTUGUESE'	=> 'Portuguese - Português',
+	'TWITTER_INDONESIAN'	=> 'Indonesian - Bahasa Indonesia',
+	'TWITTER_ITALIAN'		=> 'Italian - Italiano',
+	'TWITTER_SPANISH'		=> 'Spanish - Español',
+	'TWITTER_DANISH'		=> 'Danish - Dansk',
+	'TWITTER_TURKISH'		=> 'Turkish - Türkçe',
 	'TWITTER_ENGLISH'		=> 'English',
-	'TWITTER_FRENCH'		=> 'French',
-	'TWITTER_GERMAN'		=> 'German',
-	'TWITTER_INDONESIAN'	=> 'Indonesian',
-	'TWITTER_ITALIAN'		=> 'Italian',
-	'TWITTER_JAPANESE'		=> 'Japanese',
+	'TWITTER_FILIPINO'		=> 'Filipino - Filipino',
 	'TWITTER_KOREAN'		=> 'Korean',
-	'TWITTER_PORTUGUESE'	=> 'Portuguese',
-	'TWITTER_RUSSIAN'		=> 'Russian',
-	'TWITTER_SPANISH'		=> 'Spanish',
-	'TWITTER_TURKISH'		=> 'Turkish',
-	
+	'TWITTER_FRENCH'		=> 'French - Français',
+	'TWITTER_SWEDISH'		=> 'Swedish - Svenska',
+	'TWITTER_NORWEGIAN'		=> 'Norwegian - Norsk',
+	'TWITTER_TRAD_CHINESE'	=> 'Traditional Chinese',
+	'TWITTER_DUTCH'			=> 'Dutch - Nederlands',
+	'TWITTER_RUSSIAN'		=> 'Russian - Русский',
+	'TWITTER_GERMAN'		=> 'German - Deutsch',
+	'TWITTER_JAPANESE'		=> 'Japanese',
+	'TWITTER_FINNISH'		=> 'Finnish - Suomi',
+	'TWITTER_MALAY'			=> 'Malay - Bahasa Melayu',
+	'TWITTER_POLISH'		=> 'Polish - Polski',	
+
 	// GOOGLE PLUS
 	'ACP_SHARE_SETTINGS_GOOGLE'		=> 'Google Plus Settings',
 	'ACP_SHARE_GOOGLE'				=> 'Enable Google Plus',
@@ -128,9 +139,12 @@ $lang = array_merge($lang, array(
 	'GOOGLE_NONE'		=> 'None',
 	'GOOGLE_BUBBLE'		=> 'Bubble',
 	'GOOGLE_INLINE'		=> 'Inline',
-	
-	//
-	'SHARE_TWITTER'		 		=> 'Tweet',
 
+));
+
+// Adding the permissions
+$lang = array_merge($lang, array(
+	// User perms
+	'acl_f_share_topic'			=> array('lang' => 'Can share topics', 'cat' => 'misc'),
 ));
 ?>

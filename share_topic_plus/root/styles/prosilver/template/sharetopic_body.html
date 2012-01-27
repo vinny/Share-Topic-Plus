@@ -1,16 +1,17 @@
 <!-- IF S_SHARE_PLUS_ENABLE -->
 <div id="social_icons" style="float: right;">
 <!-- IF S_SHARE_PLUS_FACEBOOK -->
+<div id="fb-root"></div>
 <script type="text/javascript">
 //<![CDATA[
-(function() {
-	document.write('<fb:like data-href="{U_SHARE_TOPIC}" class="fb-like" data-send="{SHARE_PLUS_FACEBOOK_SEND}" data-layout="{SHARE_PLUS_FACEBOOK_LAYOUT}" data-width="{SHARE_PLUS_FACEBOOK_WIDTH}" data-show-faces="{SHARE_PLUS_FACEBOOK_FACE}" data-action="{SHARE_PLUS_FACEBOOK_ACTION}" data-colorscheme="{SHARE_PLUS_FACEBOOK_COLOR}" data-font="{SHARE_PLUS_FACEBOOK_FONT}"><\/fb:like>');
-	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
-	s.type = 'text/javascript';
-	s.async = true;
-	s.src = 'http://connect.facebook.net/{SHARE_PLUS_FACEBOOK_LANG}/all.js#xfbml=1';
-	s1.parentNode.insertBefore(s, s1);
-})();
+(function(d, s, id) {
+  document.write('<fb:like href="{U_SHARE_TOPIC}" send="{SHARE_PLUS_FACEBOOK_SEND}" layout="{SHARE_PLUS_FACEBOOK_LAYOUT}" width="{SHARE_PLUS_FACEBOOK_WIDTH}" show_faces="{SHARE_PLUS_FACEBOOK_FACE}" action="{SHARE_PLUS_FACEBOOK_ACTION}" colorscheme="{SHARE_PLUS_FACEBOOK_COLOR}" font="{SHARE_PLUS_FACEBOOK_FONT}"><\/fb:like>');
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 //]]>
 </script>
 <!-- ENDIF -->

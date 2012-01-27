@@ -67,8 +67,36 @@ $versions = array(
 		 array('facebook_lang', 'en_US'),
 		 array('facebook_width', '400'),
 		),
-	
-	
+
+		/*/ Now we need to insert some data.
+		'table_row_insert'	=> array(
+			array('phpbb_bots', array(
+				array(
+					//'bot_id'		=> '',
+					'bot_active'	=> 1,
+					'bot_name'		=> 'Facebook [Bot]',
+					'user_id'		=> '',
+					'bot_agent'		=> 'facebookexternalhit',
+					//'bot_ip'		=> '',
+				),
+			)),
+		), /* Waiting bug fix */
+
+	// Now to add some permission settings
+		'permission_add' => array(
+			array('f_share_topic', false),
+			//array('u_share_topic', true),
+		),
+
+	// How about we give some default permissions then as well?
+		'permission_set' => array(
+
+			// Global  permissions
+
+			// Local Permissions (local permissions can not be set for groups)
+			array('ROLE_FORUM_STANDARD', 'f_share_topic', 'role', true),
+		),
+
 		// Alright, now lets add some modules to the ACP
 		'module_add' => array(
 			// First, lets add a new category named ACP_SHARE_TOPIC to ACP_CAT_DOT_MODS

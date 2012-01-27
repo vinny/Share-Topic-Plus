@@ -34,7 +34,6 @@
 			<file from="root/includes/acp/info/acp_share_topic_plus.php" to="includes/acp/info/acp_share_topic_plus.php"/>
 			<file from="root/language/en/mods/info_acp_share_topic_plus.php" to="language/en/mods/info_acp_share_topic_plus.php"/>
 			<file from="root/styles/prosilver/template/sharetopic_body.html" to="styles/prosilver/template/sharetopic_body.html"/>
-			<file from="root/styles/prosilver/template/sharetopic_site.html" to="styles/prosilver/template/sharetopic_site.html"/>
 			<file from="root/umil/*.*" to="umil/*.*"/>
 			<file from="root/FacebookLocales.xml" to="FacebookLocales.xml"/>
 			<file from="root/install_share_topic.php" to="install_share_topic.php"/>
@@ -43,36 +42,30 @@
 			<edit>
 				<find><![CDATA[	'U_TOPIC'				=> "{$server_path}viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id",]]></find>
 				<action type="after-add"><![CDATA[	//mod: Share Topic Plus
-	'U_SHARE_TOPIC'			=> generate_board_url() . "/viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id",
+	'U_SHARE_TOPIC'				=> generate_board_url() . "/viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id",
+
+	'S_SHARE_PLUS_ENABLE'		=> ($auth->acl_get('f_share_topic', $forum_id)) && (!empty($config['enable_share_plus'])) ? true : false,
+	'S_SHARE_PLUS_FACEBOOK'		=> (!empty($config['enable_share_plus_facebook'])) ? true : false,
+	'S_SHARE_PLUS_TWITTER'		=> (!empty($config['enable_share_plus_twitter'])) ? true : false,
+	'S_SHARE_PLUS_GOOGLE'		=> (!empty($config['enable_share_plus_google'])) ? true : false,
+
+	'SHARE_PLUS_FACEBOOK_LAYOUT'=> !empty($config['facebook_layout']) ? $config['facebook_layout'] : false,
+	'SHARE_PLUS_FACEBOOK_SEND'	=> !empty($config['facebook_send']) ? $config['facebook_send'] : false,
+	'SHARE_PLUS_FACEBOOK_FACE'	=> !empty($config['facebook_face']) ? $config['facebook_face'] : false,
+	'SHARE_PLUS_FACEBOOK_ACTION'=> !empty($config['facebook_action']) ? $config['facebook_action'] : false,
+	'SHARE_PLUS_FACEBOOK_FONT'	=> !empty($config['facebook_font']) ? $config['facebook_font'] : false,
+	'SHARE_PLUS_FACEBOOK_COLOR'	=> !empty($config['facebook_color']) ? $config['facebook_color'] : false,
+	'SHARE_PLUS_FACEBOOK_LANG'	=> !empty($config['facebook_lang']) ? $config['facebook_lang'] : false,
+	'SHARE_PLUS_FACEBOOK_WIDTH'	=> !empty($config['facebook_width']) ? $config['facebook_width'] : false,	
+
+	'SHARE_PLUS_TWITTER_VIA'	=> !empty($config['twitter_via']) ? $config['twitter_via'] : false,
+	'SHARE_PLUS_TWITTER_BUTTON'	=> !empty($config['twitter_button']) ? $config['twitter_button'] : false,
+	'SHARE_PLUS_TWITTER_LANG'	=> !empty($config['twitter_lang']) ? $config['twitter_lang'] : false,
+		
+	'SHARE_PLUS_GOOGLE_SIZE'	=> !empty($config['google_size']) ? $config['google_size'] : false,
+	'SHARE_PLUS_GOOGLE_COUNT'	=> !empty($config['google_count']) ? $config['google_count'] : false,
+	'SHARE_PLUS_GOOGLE_LANG'	=> !empty($config['google_lang']) ? $config['google_lang'] : false,
 	//mod: Share Topic Plus]]></action>
-			</edit>
-		</open>
-		<open src="includes/functions.php">
-			<edit>
-				<find><![CDATA['S_USER_NEW'					=> $user->data['user_new'],]]></find>
-				<action type="after-add"><![CDATA[		//mod: Share Topic Plus
-		'S_SHARE_PLUS_ENABLE'		=> (!empty($config['enable_share_plus'])) ? true : false,
-		'S_SHARE_PLUS_FACEBOOK'		=> (!empty($config['enable_share_plus_facebook'])) ? true : false,
-		'S_SHARE_PLUS_TWITTER'		=> (!empty($config['enable_share_plus_twitter'])) ? true : false,
-		'S_SHARE_PLUS_GOOGLE'		=> (!empty($config['enable_share_plus_google'])) ? true : false,
-		
-		'SHARE_PLUS_TWITTER_VIA'	=> !empty($config['twitter_via']) ? $config['twitter_via'] : false,
-		'SHARE_PLUS_TWITTER_BUTTON'	=> !empty($config['twitter_button']) ? $config['twitter_button'] : false,
-		'SHARE_PLUS_TWITTER_LANG'	=> !empty($config['twitter_lang']) ? $config['twitter_lang'] : false,
-		
-		'SHARE_PLUS_GOOGLE_SIZE'	=> !empty($config['google_size']) ? $config['google_size'] : false,
-		'SHARE_PLUS_GOOGLE_COUNT'	=> !empty($config['google_count']) ? $config['google_count'] : false,
-		'SHARE_PLUS_GOOGLE_LANG'	=> !empty($config['google_lang']) ? $config['google_lang'] : false,
-		
-		'SHARE_PLUS_FACEBOOK_LAYOUT'=> !empty($config['facebook_layout']) ? $config['facebook_layout'] : false,
-		'SHARE_PLUS_FACEBOOK_SEND'	=> !empty($config['facebook_send']) ? $config['facebook_send'] : false,
-		'SHARE_PLUS_FACEBOOK_FACE'	=> !empty($config['facebook_face']) ? $config['facebook_face'] : false,
-		'SHARE_PLUS_FACEBOOK_ACTION'=> !empty($config['facebook_action']) ? $config['facebook_action'] : false,
-		'SHARE_PLUS_FACEBOOK_FONT'	=> !empty($config['facebook_font']) ? $config['facebook_font'] : false,
-		'SHARE_PLUS_FACEBOOK_COLOR'	=> !empty($config['facebook_color']) ? $config['facebook_color'] : false,
-		'SHARE_PLUS_FACEBOOK_LANG'	=> !empty($config['facebook_lang']) ? $config['facebook_lang'] : false,
-		'SHARE_PLUS_FACEBOOK_WIDTH'	=> !empty($config['facebook_width']) ? $config['facebook_width'] : false,
-		//mod: Share Topic Plus]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/template/viewtopic_body.html">
