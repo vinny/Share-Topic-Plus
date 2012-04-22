@@ -33,14 +33,19 @@
 <!-- IF S_SHARE_PLUS_GOOGLE -->
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 //<![CDATA[
-	{lang: '{SHARE_PLUS_GOOGLE_LANG}'}
+	{"lang": "{SHARE_PLUS_GOOGLE_LANG}", "parsetags": "explicit"}
 //]]>
 </script>
-<div id="plusone-div"></div>
 <script type="text/javascript">
 //<![CDATA[
-gapi.plusone.render ('plusone-div', {"href": "{U_SHARE_TOPIC}", "size": "{SHARE_PLUS_GOOGLE_SIZE}", "annotation": "{SHARE_PLUS_GOOGLE_COUNT}"});
+gapi.plusone.render
+	("plusone",{
+		"size": "{SHARE_PLUS_GOOGLE_SIZE}", 
+		"annotation": "{SHARE_PLUS_GOOGLE_COUNT}", 
+		"url": "{U_SHARE_TOPIC}" 
+	});
 //]]>
 </script>
+<div id="plusone"></div>
 <!-- ENDIF -->
 </div><!-- ENDIF -->
