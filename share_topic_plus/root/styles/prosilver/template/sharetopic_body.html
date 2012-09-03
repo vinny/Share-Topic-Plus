@@ -34,19 +34,14 @@
 <!-- IF S_SHARE_PLUS_GOOGLE -->
 <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
 //<![CDATA[
-	{"lang": "{SHARE_PLUS_GOOGLE_LANG}", "parsetags": "explicit"}
+	{"lang": "{SHARE_PLUS_GOOGLE_LANG}"}
 //]]>
 </script>
+
 <script type="text/javascript">
 //<![CDATA[
-gapi.plusone.render
-	("plusone",{
-		"size": "{SHARE_PLUS_GOOGLE_SIZE}", 
-		"annotation": "{SHARE_PLUS_GOOGLE_COUNT}", 
-		"url": "{U_SHARE_TOPIC}" 
-	});
+	document.write('<g:plusone size="{SHARE_PLUS_GOOGLE_SIZE}" url="{U_SHARE_TOPIC}" annotation="{SHARE_PLUS_GOOGLE_COUNT}"></g:plusone>');
 //]]>
 </script>
-<div id="plusone"></div>
 <!-- ENDIF -->
 </div><!-- ENDIF -->
