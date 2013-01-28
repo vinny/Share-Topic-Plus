@@ -1,47 +1,47 @@
-<!-- IF S_SHARE_PLUS_ENABLE -->
-<div id="social_icons" style="float: right;">
-<!-- IF S_SHARE_PLUS_FACEBOOK -->
+<!-- BEGIN share -->
+<!-- IF share.S_SHARE_ACTIVE -->
+<div id="social_icons" class="right-box">
+<!-- IF share.S_FACEBOOK_SHARE -->
 <div id="fb-root"></div>
-<script type="text/javascript">
+<script>
 //<![CDATA[
 (function(d, s, id) {
-  document.write('<fb:like href="{U_SHARE_TOPIC}" send="{SHARE_PLUS_FACEBOOK_SEND}" layout="{SHARE_PLUS_FACEBOOK_LAYOUT}" width="{SHARE_PLUS_FACEBOOK_WIDTH}" show_faces="{SHARE_PLUS_FACEBOOK_FACE}" action="{SHARE_PLUS_FACEBOOK_ACTION}" colorscheme="{SHARE_PLUS_FACEBOOK_COLOR}" font="{SHARE_PLUS_FACEBOOK_FONT}"><\/fb:like>');
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/{SHARE_PLUS_FACEBOOK_LANG}/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/{share.S_FACEBOOK_SHARE_LANG}/all.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 //]]>
 </script>
+
+<div class="fb-like" data-href="{share.U_SHARE_TOPIC_URL}" data-send="{share.S_FACEBOOK_SHARE_SEND}" data-layout="{share.S_FACEBOOK_SHARE_LAYOUT}" data-width="{share.S_FACEBOOK_SHARE_WIDTH}" data-show-faces="{share.S_FACEBOOK_SHARE_FACE}" data-action="{share.S_FACEBOOK_SHARE_ACTION}" data-colorscheme="{share.S_FACEBOOK_SHARE_COLOR}" data-font="{share.S_FACEBOOK_SHARE_FONT}"></div>
 <!-- ENDIF -->
 
-<!-- IF S_SHARE_PLUS_TWITTER -->
+<!-- IF share.S_TWITTER_SHARE -->
 <script type="text/javascript">
 //<![CDATA[
 (function() {
-	document.write('<a href="http://twitter.com/share" class="twitter-share-button" data-url="{U_SHARE_TOPIC}" data-text="{TOPIC_TITLE}" data-count="{SHARE_PLUS_TWITTER_BUTTON}" data-via="{SHARE_PLUS_TWITTER_VIA}" data-lang="{SHARE_PLUS_TWITTER_LANG}">Tweet<\/a>');
+	document.write('<a href="http://twitter.com/share" class="twitter-share-button" data-url="{share.U_SHARE_TOPIC_URL}" data-text="{share.SHARE_TOPIC_TITLE}" data-count="{share.S_TWITTER_SHARE_BUTTON}"<!-- IF share.S_TWITTER_SHARE_VIA != '' --> data-via="{share.S_TWITTER_SHARE_VIA}"<!-- ENDIF --> data-lang="{share.S_TWITTER_SHARE_LANG}">Tweet<\/a>');
 	var s = document.createElement('SCRIPT'), s1 = document.getElementsByTagName('SCRIPT')[0];
 	s.type = 'text/javascript';
 	s.async = true;
-	s.src = 'http://platform.twitter.com/widgets.js';
+	s.src = '{T_SUPER_TEMPLATE_PATH}/twitter_widgets.js';
 	s1.parentNode.insertBefore(s, s1);
 })();
 //]]>
 </script>
 <!-- ENDIF -->
 
-<!-- IF S_SHARE_PLUS_GOOGLE -->
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+<!-- IF share.S_GOOGLE_SHARE -->
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/plusone.js">
 //<![CDATA[
-	{"lang": "{SHARE_PLUS_GOOGLE_LANG}"}
+	{lang: '{share.S_GOOGLE_SHARE_LANG}'}
 //]]>
 </script>
-
-<script type="text/javascript">
-//<![CDATA[
-	document.write('<g:plusone size="{SHARE_PLUS_GOOGLE_SIZE}" url="{U_SHARE_TOPIC}" annotation="{SHARE_PLUS_GOOGLE_COUNT}"></g:plusone>');
-//]]>
-</script>
+<div class="g-plusone" data-size="{share.S_GOOGLE_SHARE_SIZE}" data-annotation="{share.S_GOOGLE_SHARE_COUNT}" data-href="{share.U_SHARE_TOPIC_URL}"></div>
 <!-- ENDIF -->
-</div><!-- ENDIF -->
+
+</div>
+<!-- ENDIF -->
+<!-- END share -->

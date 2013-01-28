@@ -43,7 +43,7 @@ $lang = array_merge($lang, array(
 	'ACP_SHARE_ENABLE'				=> 'Enable',
 
 	// acp version check
-	'ACP_VERSION_CURRENT'		=> 'Current version',
+	'ACP_VERSION_CURRENT'		=> 'Installed version',
 	'ACP_VERSION_NEW'			=> 'Latest version',
 
 	// FACEBOOK
