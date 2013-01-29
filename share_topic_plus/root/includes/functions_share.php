@@ -24,7 +24,7 @@ class share
 
 		$topic_data['topic_title'] = censor_text($topic_data['topic_title']);
 		// Generate all the URIs ...
-		$view_topic_url = generate_board_url() . "viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id";
+		$view_topic_url = generate_board_url() . "/viewtopic.$phpEx?f=$forum_id&amp;t=$topic_id";
 
 		// Assign template variables
 		$template->assign_block_vars('share', array(
